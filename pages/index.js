@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 import { getHomepagePosts } from '../queries/queries';
+import PostCard from '../components/PostCard';
 
 export default function Home() {
   const {
@@ -20,7 +21,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {isSuccess && posts.map((post) => <h1 key={post.id}>{post.title}</h1>)}
+      {isSuccess &&
+        posts.map((post) => (
+          <PostCard
+            key={post.id}
+            title={post.title}
+            body={post.body}
+            image={post.featured_image.id}
+          />
+        ))}
     </div>
   );
 }
