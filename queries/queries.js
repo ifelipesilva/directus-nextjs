@@ -20,3 +20,5 @@ export const getHomepageProducts = async () => {
 
   return data.data.products;
 };
+
+

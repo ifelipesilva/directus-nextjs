@@ -34,7 +34,7 @@ export default function Home() {
               price={product.price}
               image={product.product_image.id}
               category={
-                product.product_categories[0].categories_id.category_name
+                product.Category[0].categories_id.category_name
               }
             />
           ))}
